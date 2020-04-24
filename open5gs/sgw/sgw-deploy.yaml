@@ -3,20 +3,10 @@ kind: Service
 metadata:
   name: open5gs-sgw-svc-pool
   namespace: open5gs
-  annotations:
-    danm.k8s.io/selector: '{"epc-mode":"sgw"}'
-    danm.k8s.io/network: gtpc
   labels:
     epc-mode: sgw
 spec:
-  type: ClusterIP
-  ports:
-  - name: gtpc
-    port: 2123
-    protocol: UDP
-  - name: gtpu
-    port: 2152
-    protocol: UDP
+  clusterIP: None
   selector:
     epc-mode: sgw        
 ---
