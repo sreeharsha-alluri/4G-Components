@@ -18,4 +18,5 @@ go build -o bin/nssf -x src/nssf/nssf.go  && \
 go build -o bin/pcf -x src/pcf/pcf.go  && \
 go build -o bin/smf -x src/smf/smf.go  && \
 go build -o bin/udm -x src/udm/udm.go  && \
-go build -o bin/udr -x src/udr/udr.go
+go build -o bin/udr -x src/udr/udr.go  && \
+go build -o bin/udr -x src/n3iwf/n3iwf.go
