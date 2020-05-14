@@ -706,6 +706,15 @@ data:
         - cidr: 60.60.0.0/24
           apn: internet
 
+  webuicfg.yml: |
+    info:
+      version: 3.0.1
+      description: WebUI initial local configuration
+    configuration:
+      mongodb:
+          name: free5gc
+          url: mongodb://mongodb-svc:27017  
+
 kind: ConfigMap
 metadata:
   name: free5gc-configmap
