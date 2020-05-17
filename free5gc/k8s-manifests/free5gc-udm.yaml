@@ -14,7 +14,7 @@ spec:
     spec:
       containers:      
       - name: myapp-container
-        image: registry.gitlab.com/infinitydon/registry/free5gc-cpf:v3.0.1
+        image: registry.gitlab.com/infinitydon/registry/free5gc-cpf-udm-patch:v3.0.1
         imagePullPolicy: Always
         command: ["/bin/sh"]
         args: ["-c", "./bin/udm"]
