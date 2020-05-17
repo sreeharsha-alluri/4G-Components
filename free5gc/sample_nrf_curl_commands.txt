@@ -1,4 +1,4 @@
-curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF" | jq
 
 {
   "validityPeriod": 100,
@@ -48,7 +48,7 @@ curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?req
 }
 
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
@@ -97,7 +97,7 @@ root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -
 }
 
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=UDR" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=UDR" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
@@ -143,7 +143,7 @@ root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -
 }
 
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=PCF" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=PCF" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
@@ -171,7 +171,7 @@ root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -
   ]
 }
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=SMF" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=SMF" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
@@ -264,7 +264,7 @@ root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -
 
 
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AMF" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AMF" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
@@ -1309,7 +1309,7 @@ root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -
 
 
 
-root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://192.168.2.5:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=UDM" | jq
+root@free5gc-amf-deployment-6c64555fdb-tq6mx:/go/src/free5gc# curl --silent -k -X GET "https://free5gc-nrf-service:29510/nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=UDM" | jq
 {
   "validityPeriod": 100,
   "nfInstances": [
