@@ -269,6 +269,6 @@ data:
       # Examples:
       #ConnectPeer = "aaa.wide.ad.jp";
       #ConnectPeer = "old.diameter.serv" { TcTimer = 60; TLS_old_method; No_SCTP; Port=3868; } ;
-      ConnectPeer = "pgw.localdomain" { ConnectTo = "open5gs-pgw-svc-pool"; No_TLS; };
+      ConnectPeer = "smf.localdomain" { ConnectTo = "open5gs-smf-svc-pool"; No_TLS; No_SCTP; };
 
       ##############################################################

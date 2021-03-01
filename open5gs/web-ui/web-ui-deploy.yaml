@@ -33,10 +33,14 @@ spec:
       containers:
       - name: webui
         #imagePullPolicy: Always
-        image: registry.gitlab.com/infinitydon/registry/open5gs-webui:1.2.0
+        image: registry.gitlab.com/infinitydon/registry/open5gs-webui:v2.1.7
         command: ["node", "server/index.js"]
+        ports:
+        - containerPort: 3000
         env:
         - name: DB_URI
           value: "mongodb://mongodb/open5gs?replicaSet=rs0"
         - name: NODE_ENV
-          value: "production"          
+          value: "production"
+        - name: HOSTNAME
+          value: 0.0.0.0        

@@ -16,7 +16,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: StatefulSet
 metadata:
-  name: open5gs-pcrf-deployment
+  name: open5gs-pcrf
   namespace: open5gs
   labels:
     epc-mode: pcrf
@@ -33,8 +33,8 @@ spec:
     spec:
       containers:
         - name: pcrf
-          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v1.2.0
-          imagePullPolicy: Always
+          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v2.1.7
+          imagePullPolicy: IfNotPresent
           command: ["open5gs-pcrfd", "-c", "/open5gs/config-map/pcrf.yaml"]
           volumeMounts:
           - name: open5gs-pcrf-config

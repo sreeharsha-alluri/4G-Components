@@ -6,7 +6,6 @@ metadata:
   labels:
     epc-mode: mme
 spec:
-  type: NodePort
   ports:
 #  - name: s1ap
 #    port: 36412
@@ -21,9 +20,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: StatefulSet
 metadata:
-  name: open5gs-mme-deployment
-  annotations:
-    "cni.projectcalico.org/ipAddrs": "[\"192.168.230.26\"]"
+  name: open5gs-mme
   namespace: open5gs
   labels:
     epc-mode: mme
@@ -40,7 +37,7 @@ spec:
     spec:
       containers:
         - name: mme
-          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v1.2.0
+          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v2.1.7
           imagePullPolicy: Always
           command: ["open5gs-mmed", "-c", "/open5gs/config-map/mme.yaml"]
           volumeMounts:

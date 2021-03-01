@@ -16,7 +16,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: StatefulSet
 metadata:
-  name: open5gs-hss-deployment
+  name: open5gs-hss
   namespace: open5gs
   labels:
     epc-mode: hss
@@ -34,8 +34,8 @@ spec:
     spec:
       containers:
         - name: hss
-          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v1.2.0
-          imagePullPolicy: Always
+          image: registry.gitlab.com/infinitydon/registry/open5gs-aio:v2.1.7
+          imagePullPolicy: IfNotPresent
           command: ["open5gs-hssd", "-c", "/open5gs/config-map/hss.yaml"]
           volumeMounts:
           - name: open5gs-hss-config
@@ -50,4 +50,4 @@ spec:
           name: open5gs-hss-config
       - name: open5gs-hss-diameter
         configMap:
-          name: open5gs-hss-diameter          
+          name: open5gs-hss-diameter

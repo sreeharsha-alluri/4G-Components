@@ -37,8 +37,8 @@ data:
     
     sgw:
         gtpc:
-          - name: "open5gs-sgw-svc-pool"
+          - name: "open5gs-sgwc-svc-pool"
     
-    pgw:
+    smf:
         gtpc:
-          - name: "open5gs-pgw-svc-pool"
+          - name: "open5gs-smf-svc-pool"

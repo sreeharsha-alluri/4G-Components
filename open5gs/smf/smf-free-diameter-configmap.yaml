@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: open5gs-pgw-diameter
+  name: open5gs-smf-diameter
   namespace: open5gs
   labels:
-    epc-mode: pgw
+    epc-mode: smf
 data:
- diameter-pgw.conf: |
+ diameter-smf.conf: |
   # This is a sample configuration file for freeDiameter daemon.
 
   # Most of the options can be omitted, as they default to reasonable values.
@@ -25,7 +25,7 @@ data:
   # This must be a valid FQDN that resolves to the local host.
   # Default: hostname's FQDN
   #Identity = "aaa.koganei.freediameter.net";
-  Identity = "pgw.localdomain";
+  Identity = "smf.localdomain";
 
   # The Diameter Realm of this daemon.
   # Default: the domain part of Identity (after the first dot).
@@ -115,7 +115,7 @@ data:
   # Default : NO DEFAULT
   #TLS_Cred = "<x509 certif file.PEM>" , "<x509 private key file.PEM>";
   #TLS_Cred = "/etc/ssl/certs/freeDiameter.pem", "/etc/ssl/private/freeDiameter.key";
-  TLS_Cred = "/etc/freeDiameter/pgw.cert.pem", "/etc/freeDiameter/pgw.key.pem";
+  TLS_Cred = "/etc/freeDiameter/smf.cert.pem", "/etc/freeDiameter/smf.key.pem";
 
   # Certificate authority / trust anchors
   # The file containing the list of trusted Certificate Authorities (PEM list)
@@ -269,7 +269,7 @@ data:
   # Examples:
   #ConnectPeer = "aaa.wide.ad.jp";
   #ConnectPeer = "old.diameter.serv" { TcTimer = 60; TLS_old_method; No_SCTP; Port=3868; } ;
-  ConnectPeer = "pcrf.localdomain" { ConnectTo = "open5gs-pcrf-svc-pool"; No_TLS; };
+  ConnectPeer = "pcrf.localdomain" { ConnectTo = "open5gs-pcrf-svc-pool"; No_TLS; No_SCTP; };
 
 
   ##############################################################
