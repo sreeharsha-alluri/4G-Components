@@ -1,0 +1,69 @@
+Installing Minikube
+
+curl https://get.docker.com | sudo bash
+
+sudo apt install -y curl wget apt-transport-https
+
+wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+
+sudo chmod +x /usr/local/bin/minikube
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-
+release/release/stable.txt`/bin/linux/amd64/kubectl
+
+sudo chmod +x kubectl
+
+sudo mv kubectl /usr/local/bin/
+
+sudo usermod -aG docker $(whoami)
+
+sudo reboot
+
+git clone https://github.com/sreeharsha-alluri/Open5gs
+
+ls
+
+cd Open5gs/
+
+ls
+
+cd charts/
+
+cd open5gs/
+
+ls
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
+chmod 700 get_helm.sh
+
+./get_helm.sh
+
+cd ..
+
+goto this path and then enter the command
+
+~/Open5gs/charts/open5gs
+
+helm dependency update
+
+cd ..
+
+goto this path and then enter the command
+
+~/Open5gs/charts
+
+helm install open5gs open5gs/
+
+kubectl get pods
+
+kubectl get pods -o wide
+
+kubectl port-forward --address=0.0.0.0 svc/open5gs-webui 8888:3000 &
+
+public ip v4 address : 8888
+
+login name : admin
+password : 1423
