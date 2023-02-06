@@ -1,0 +1,72 @@
+Jenkins Dashboard --> Manage Jenkins --> Manage Nodes and Clouds
+
+Add New Node
+
+Name : slave-2
+
+Description: 4g
+
+Number of executors: 1
+
+Remote root directory: /home/ubuntu/jenkins
+
+Labels: slave-2
+
+Usage: Use this node as much as possible
+
+Launch Method:  Launch agents via SSH
+
+Host : Copy the IP address of 4G components EC2 Machine
+
+Credentials: Click on + sign
+
+             Kind: SSH username with private key
+
+Private Key : Enter directly and paste the pem file key
+
+Under host key verification strategy select : Manually trusted key verification strategy
+
+While running the script for the first time
+
+node('slave-2'){
+    stage('cloning'){
+        sh 'rm -rf Open5gs-old'
+        sh 'mv Open5gs Open5gs-old'
+        sh 'git clone https://github.com/sreeharsha-alluri/Open5gs.git'
+    }
+    stage('deployment'){
+        sh 'pwd'
+        sh 'helm dependency update /home/ubuntu/jenkins/workspace/4g-components/Open5gs/charts/open5gs'
+        
+        sh 'helm install open5gs /home/ubuntu/jenkins/workspace/4g-components/Open5gs/charts/open5gs/'
+    }
+}
+
+
+For the second tike while execution comment the code as follows
+
+
+node('slave-2'){
+    stage('cloning'){
+        sh 'rm -rf Open5gs-old'
+        sh 'mv Open5gs Open5gs-old'
+        sh 'git clone https://github.com/sreeharsha-alluri/Open5gs.git'
+    }
+    stage('deployment'){
+        sh 'pwd'
+        sh 'helm dependency update /home/ubuntu/jenkins/workspace/4g-components/Open5gs/charts/open5gs'
+        
+        sh 'helm install open5gs /home/ubuntu/jenkins/workspace/4g-components/Open5gs/charts/open5gs/'
+    }
+}
+
+
+
+In case if the pipeline throws any errors
+Goto the ec2 machine where 4G components are present
+
+helm ls
+
+helm un open5gs
+
+Then re-run the pipeline script again
